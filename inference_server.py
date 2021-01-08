@@ -10,6 +10,12 @@ clf = pickle.loads(model_pickle)
 
 app = Flask(__name__)
 
+@app.route()
+def welcome():
+    return 'welcome to party prediction app.\nIt is not what you think'
+
+
+
 @app.route('/test')
 def test():
     return 'test ok'
