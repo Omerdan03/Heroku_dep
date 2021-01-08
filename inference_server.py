@@ -11,7 +11,7 @@ clf = pickle.loads(model_pickle)
 app = Flask(__name__)
 
 @app.route('/test')
-def predict_single():
+def test():
     return 'test ok'
 
 
