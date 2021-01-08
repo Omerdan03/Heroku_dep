@@ -3,7 +3,7 @@ import pickle
 from flask import request
 import numpy as np
 import pandas as pd
-import json
+import os
 
 model_pickle = pickle.load(open("model.p", "rb"))
 clf = pickle.loads(model_pickle)
@@ -38,7 +38,8 @@ def predict_many():
 
 
 def main():
-    app.run()
+    port = os.environ.get('PORT')
+    app.run(host='0.0.0.0', port=int(port))
 
 
 
